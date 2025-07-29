@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruit & Veggie Cards</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f8ff;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .section-title {
+      margin: 40px 0 10px;
+      font-size: 1.4em;
+      color: #2c3e50;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 20px;
+    }
+
+    .card {
+      flex: 0 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 250px;
+      scroll-snap-align: start;
+      transform: translateY(50px);
+      opacity: 0;
+      animation: rollIn 0.6s ease-out forwards;
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    @keyframes rollIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Fruit & Vegetable Info Cards</h1>
+
+  <div class="section-title">🍓 Fruits</div>
+  <div class="card-container" id="fruits">
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Banana" alt="Banana">
+      <h2>Banana</h2>
+      <p><strong>Vitamins:</strong> B6, C</p>
+      <p><strong>Calories:</strong> 89 kcal</p>
+      <p><strong>Uses:</strong> Smoothies, snacks, baking</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Mango" alt="Mango">
+      <h2>Mango</h2>
+      <p><strong>Vitamins:</strong> A, C, E</p>
+      <p><strong>Calories:</strong> 60 kcal</p>
+      <p><strong>Uses:</strong> Juices, desserts, chutneys</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Apple" alt="Apple">
+      <h2>Apple</h2>
+      <p><strong>Vitamins:</strong> C, B6</p>
+      <p><strong>Calories:</strong> 52 kcal</p>
+      <p><strong>Uses:</strong> Salads, snacking, baking</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Grapes" alt="Grapes">
+      <h2>Grapes</h2>
+      <p><strong>Vitamins:</strong> C, K</p>
+      <p><strong>Calories:</strong> 67 kcal</p>
+      <p><strong>Uses:</strong> Juices, snacking, wine</p>
+    </div>
+  </div>
+
+  <div class="section-title">🥦 Vegetables</div>
+  <div class="card-container" id="vegetables">
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Tomato" alt="Tomato">
+      <h2>Tomato</h2>
+      <p><strong>Vitamins:</strong> A, C, K</p>
+      <p><strong>Calories:</strong> 18 kcal</p>
+      <p><strong>Uses:</strong> Sauces, soups, salads</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Carrot" alt="Carrot">
+      <h2>Carrot</h2>
+      <p><strong>Vitamins:</strong> A, K, C</p>
+      <p><strong>Calories:</strong> 41 kcal</p>
+      <p><strong>Uses:</strong> Raw, stir-fry, juice</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Spinach" alt="Spinach">
+      <h2>Spinach</h2>
+      <p><strong>Vitamins:</strong> A, C, K</p>
+      <p><strong>Calories:</strong> 23 kcal</p>
+      <p><strong>Uses:</strong> Curries, soups, salad</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/150?text=Potato" alt="Potato">
+      <h2>Potato</h2>
+      <p><strong>Vitamins:</strong> B6, C</p>
+      <p><strong>Calories:</strong> 77 kcal</p>
+      <p><strong>Uses:</strong> Frying, baking, curries</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((card, i) => {
+        card.style.animationDelay = `${i * 0.3}s`;
+      });
+    });
+  </script>
+</body>
+</html>
